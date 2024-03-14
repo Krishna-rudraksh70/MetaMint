@@ -158,3 +158,15 @@ var swiper = new Swiper(".blogs-slider", {
     },
   },
 });
+
+  // Function to continuously fade the SVG
+  function fadeSVG() {
+    const svg = document.getElementById("logosvg");
+    setInterval(() => {
+      // Toggle opacity between 0 and 1
+      svg.style.opacity = (svg.style.opacity === "0") ? "1" : "0";
+    }, 980); // Change fade duration as needed
+  }
+
+  // Call the fadeSVG function when the page loads
+  window.onload = fadeSVG;

@@ -20,7 +20,12 @@
     transition:all .2s linear;
     transition:width none;
 }
-
+svg{
+    width: 15px;
+    height: auto;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
 #loading{
 	position: fixed;
 	width: 100%;
@@ -478,6 +483,13 @@ section{
 
 .newsletter form h3{
     font-size: 2.2rem;
+    color:#fff;
+    padding-bottom: .7rem;
+    font-weight: normal;
+}
+
+.newsletter form p{
+    font-size: 1.3rem;
     color:#fff;
     padding-bottom: .7rem;
     font-weight: normal;
