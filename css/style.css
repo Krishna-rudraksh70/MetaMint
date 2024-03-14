@@ -561,7 +561,8 @@ section{
 }
 
 .deal .image img{
-    width: 100%;
+    width: 50%;
+    height: auto;
 }
 
 .deal .content h3{
