@@ -409,6 +409,24 @@ section {
     cursor: pointer;
 }
 
+.wallet-form-container form a{
+    text-align: center;
+    bottom:  3rem;
+    display: block;
+    background: none;
+}
+
+#metamask_icon{
+    width: 10%;
+    height: auto;
+    top: 50%;
+}
+#core_icon{
+    width: 12%;
+    height: auto;
+    top: 50%;
+}
+
 .home {
     background: url(../image/banner-bg.jpg) no-repeat;
     background-size: cover;
@@ -863,10 +881,6 @@ section {
     height: 10rem;
 }
 
-#wallet-icon{
-    width: 10%;
-    height: auto;
-}
 
 /* media queries  */
 
