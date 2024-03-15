@@ -377,12 +377,6 @@ section {
     padding: 1rem 0;
 }
 
-.wallet-form-container form label {
-    font-size: 1.5rem;
-    color: var(--light-color);
-    cursor: pointer;
-}
-
 .wallet-form-container form .btn {
     text-align: center;
     width: 100%;
@@ -409,25 +403,35 @@ section {
     cursor: pointer;
 }
 
-.wallet-form-container form a{
-    text-align: center;
-    bottom:  3rem;
+.wallet-form-container a {
+    /* text-align: center; */
+    text-align: left;
+    bottom: 4rem;
     display: block;
     background: none;
 }
+.wallet-form-container .label {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+}
 
-#metamask_icon{
+#metamask_icon {
     width: 10%;
     height: auto;
-    top: 50%;
-}
-#core_icon{
-    width: 12%;
-    height: auto;
-    top: 50%;
+    /* top: 50%; */
 }
 
-#brave_icon{
+#core_icon {
+    width: 12%;
+    height: auto;
+    /* top: 50%; */
+}
+
+#brave_icon {
     width: 20%;
     height: auto;
 }
@@ -471,6 +475,11 @@ section {
 .home .row .content h3 {
     color: var(--black);
     font-size: 4.5rem;
+}
+
+.content svg {
+    width: 2.5rem;
+    height: auto;
 }
 
 .home .row .content p {
@@ -776,7 +785,7 @@ section {
 .blogs .blogs-slider .box .image img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .blogs .blogs-slider .box:hover .image img {
