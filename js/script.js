@@ -186,34 +186,32 @@ window.onload = () => {
 // // Call the fadeSVG function when the page loads
 // window.onload = fadeSVG;
 
-document.getElementById("subscription-form").addEventListener("submit", async function(event) {
-  event.preventDefault();
-  const form = event.target;
-  const formData = new FormData(form);
+const form = document.querySelector("#subscription-form");
+const btn = document.querySelector("#btns");
+const btnText = document.querySelector("#btnText");
 
-  try {
-      const response = await fetch(form.action, {
-          method: form.method,
-          body: formData,
-          headers: {
-              'Accept': 'application/json'
-          }
-      });
+// Adding a submit event listener to the form
+form.addEventListener("submit", (event) => {
+    // Preventing the default form submission behavior
+    event.preventDefault();
 
-      const responseData = await response.json();
+    // Simulating validation failure (replace with actual validation logic)
+    const isInvalid = false; // Replace this with your actual validation logic
 
-      if (response.ok) {
-          document.getElementById("message").innerText = "Subscription successful!";
-          document.getElementById("message").classList.remove("error-message");
-          document.getElementById("message").classList.add("success-message");
-          document.getElementById("message").style.display = "block";
-      } else {
-          throw new Error(responseData.error);
-      }
-  } catch (error) {
-      document.getElementById("message").innerText = error.message;
-      document.getElementById("message").classList.remove("success-message");
-      document.getElementById("message").classList.add("error-message");
-      document.getElementById("message").style.display = "block";
-  }
+    if (isInvalid) {
+        // If validation fails, add the 'red' class to the button
+        btn.classList.add("red");
+        // Reset the button color after 1 second
+        setTimeout(() => {
+            btn.classList.remove("red");
+        }, 1000);
+    } else {
+        // If validation succeeds, proceed with form submission
+        // Changing the inner HTML of the button to "Thanks"
+        btnText.innerHTML = "Thanks";
+        // Adding the "active" class to the button
+        btn.classList.add("active");
+
+        // Here, you might also want to submit the form data using AJAX or any other method.
+    }
 });
