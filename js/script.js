@@ -1,172 +1,187 @@
 searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick = () =>{
+document.querySelector('#search-btn').onclick = () => {
   searchForm.classList.toggle('active');
 }
 
 let loginForm = document.querySelector('.login-form-container');
+let walletForm = document.querySelector('.wallet-form-container');
 
-document.querySelector('#login-btn').onclick = () =>{
+document.querySelector('#login-btn').onclick = () => {
   loginForm.classList.toggle('active');
 }
 
-document.querySelector('#close-login-btn').onclick = () =>{
+document.querySelector('#close-login-btn').onclick = () => {
   loginForm.classList.remove('active');
 }
 
-window.onscroll = () =>{
+document.querySelector('#wallet-btn').onclick = () => {
+  walletForm.classList.toggle('active');
+}
 
+document.querySelector('#close-wallet-btn').onclick = () => {
+  walletForm.classList.remove('active');
+}
+
+window.onscroll = () => {
   searchForm.classList.remove('active');
 
-  if(window.scrollY > 80){
+  if (window.scrollY > 80) {
     document.querySelector('.header .header-2').classList.add('active');
-  }else{
+  } else {
+    document.querySelector('.header .header-2').classList.remove('active');
+  }
+}
+
+// Function to show the loader
+function loader() {
+  const loaderContainer = document.querySelector('.loader-container');
+  loaderContainer.classList.add('active');
+}
+
+// function loaderremove(){
+//   const loaderContainer = document.querySelector('.loader-container');
+//   loaderContainer.classList.remove('active');
+// }
+
+function fadeSVG() {
+  const svg = document.getElementById("logosvg");
+  setInterval(() => {
+    // Toggle opacity between 0 and 1
+    svg.style.opacity = (svg.style.opacity === "0") ? "1" : "0";
+  }, 600); // Change fade duration as needed
+}
+
+
+window.onload = () => {
+  // Check scroll position
+  if (window.scrollY > 80) {
+    document.querySelector('.header .header-2').classList.add('active');
+  } else {
     document.querySelector('.header .header-2').classList.remove('active');
   }
 
+  // Call loader function when the page loads
+  loader();
+  // Call loaderremove function after 1000 milliseconds (1 second)
+  // setTimeout(loaderremove, 1000);
+
+  fadeSVG();
+
+
+  var swiper = new Swiper(".books-slider", {
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 9500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  var swiper = new Swiper(".featured-slider", {
+    spaceBetween: 10,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 9500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      450: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+    },
+  });
+
+  var swiper = new Swiper(".arrivals-slider", {
+    spaceBetween: 10,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 9500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  var swiper = new Swiper(".reviews-slider", {
+    spaceBetween: 10,
+    grabCursor: true,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 9500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  var swiper = new Swiper(".blogs-slider", {
+    spaceBetween: 10,
+    grabCursor: true,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 9500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
 }
 
-window.onload = () =>{
-
-  if(window.scrollY > 80){
-    document.querySelector('.header .header-2').classList.add('active');
-  }else{
-    document.querySelector('.header .header-2').classList.remove('active');
-  }
-
-  fadeOut();
-
-}
-
-function loader(){
-  document.querySelector('.loader-container').classList.add('active');
-}
-
-function fadeOut(){
-  setTimeout(loader, 2000);
-}
-
-var swiper = new Swiper(".books-slider", {
-  loop:true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 9500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
-
-var swiper = new Swiper(".featured-slider", {
-  spaceBetween: 10,
-  loop:true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 9500,
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    450: {
-      slidesPerView: 2,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-    },
-  },
-});
-
-var swiper = new Swiper(".arrivals-slider", {
-  spaceBetween: 10,
-  loop:true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 9500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
-
-var swiper = new Swiper(".reviews-slider", {
-  spaceBetween: 10,
-  grabCursor:true,
-  loop:true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 9500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
-
-var swiper = new Swiper(".blogs-slider", {
-  spaceBetween: 10,
-  grabCursor:true,
-  loop:true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 9500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
-
-  // Function to continuously fade the SVG
-  function fadeSVG() {
-    const svg = document.getElementById("logosvg");
-    setInterval(() => {
-      // Toggle opacity between 0 and 1
-      svg.style.opacity = (svg.style.opacity === "0") ? "1" : "0";
-    }, 980); // Change fade duration as needed
-  }
-
-  // Call the fadeSVG function when the page loads
-  window.onload = fadeSVG;
+// // Call the fadeSVG function when the page loads
+// window.onload = fadeSVG;
