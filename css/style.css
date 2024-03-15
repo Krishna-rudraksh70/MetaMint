@@ -895,6 +895,12 @@ section {
     height: 10rem;
 }
 
+.success-message {
+    color: green;
+}
+.error-message {
+    color: red;
+}
 
 /* media queries  */
 
