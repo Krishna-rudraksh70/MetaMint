@@ -427,6 +427,11 @@ section {
     top: 50%;
 }
 
+#brave_icon{
+    width: 20%;
+    height: auto;
+}
+
 .home {
     background: url(../image/banner-bg.jpg) no-repeat;
     background-size: cover;
