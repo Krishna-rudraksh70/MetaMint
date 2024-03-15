@@ -185,3 +185,35 @@ window.onload = () => {
 
 // // Call the fadeSVG function when the page loads
 // window.onload = fadeSVG;
+
+document.getElementById("subscription-form").addEventListener("submit", async function(event) {
+  event.preventDefault();
+  const form = event.target;
+  const formData = new FormData(form);
+
+  try {
+      const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+              'Accept': 'application/json'
+          }
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+          document.getElementById("message").innerText = "Subscription successful!";
+          document.getElementById("message").classList.remove("error-message");
+          document.getElementById("message").classList.add("success-message");
+          document.getElementById("message").style.display = "block";
+      } else {
+          throw new Error(responseData.error);
+      }
+  } catch (error) {
+      document.getElementById("message").innerText = error.message;
+      document.getElementById("message").classList.remove("success-message");
+      document.getElementById("message").classList.add("error-message");
+      document.getElementById("message").style.display = "block";
+  }
+});

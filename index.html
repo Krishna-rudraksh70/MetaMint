@@ -448,12 +448,13 @@
 
     <section class="newsletter">
 
-        <form action="https://formspree.io/f/mpzvlvgq" method="POST">
+        <form id="subscription-form" action="https://formspree.io/f/mpzvlvgq" method="POST">
             <h3>Stay in the loop</h3>
             <p>Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and
                 tricks for navigating MetaMint.</p>
-            <input type="email" name="" placeholder="Enter your email" id="" class="box">
-            <input type="submit" value="subscribe" class="btn">
+            <input type="email" name="email" placeholder="Enter your email" class="box" required>
+            <button type="submit" class="btn">Subscribe</button>
+            <div id="message" class="success-message" style="display:none;"></div>
         </form>
 
     </section>
