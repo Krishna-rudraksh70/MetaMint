@@ -863,6 +863,10 @@ section {
     height: 10rem;
 }
 
+#wallet-icon{
+    width: 10%;
+    height: auto;
+}
 
 /* media queries  */
 
