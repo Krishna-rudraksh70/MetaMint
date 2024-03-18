@@ -490,6 +490,10 @@ section {
     padding: 1rem 0;
 }
 
+.fa-money-bill, .fa-handshake{
+    font-size:40px;
+    color:#27ae60
+}
 .icons-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -670,6 +674,10 @@ section {
     cursor: pointer;
 }
 
+#btnText{
+    font-size: 2.5rem;
+}
+
 .newsletter form .check-box{
     width: 80px;
     height: 80px;
@@ -687,7 +695,7 @@ section {
 }
 
 .newsletter form svg path{
-    stroke-width: 3;
+    stroke-width: 5;
     stroke: #fff;
     stroke-dasharray: 34;
     stroke-dashoffset: 34;
