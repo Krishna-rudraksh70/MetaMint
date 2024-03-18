@@ -192,32 +192,26 @@ const btnText = document.querySelector("#btnText");
 
 // Adding a submit event listener to the form
 form.addEventListener("submit", (event) => {
-  // Preventing the default form submission behavior
-  event.preventDefault();
+    // Preventing the default form submission behavior
+    event.preventDefault();
 
-  // Simulating validation failure (replace with actual validation logic)
-  const isInvalid = false; // Replace this with your actual validation logic
+    // Simulating validation failure (replace with actual validation logic)
+    const isInvalid = false; // Replace this with your actual validation logic
 
-  if (isInvalid) {
-      // If validation fails, add the 'red' class to the button
-      btn.classList.add("red");
-      // Reset the button color after 1 second
-      setTimeout(() => {
-          btn.classList.remove("red");
-      }, 1500);
-  } else {
-      // If validation succeeds, proceed with form submission
-      // Changing the inner HTML of the button to "Thanks"
-      btnText.innerHTML = "Thanks";
-      // Adding the "active" class to the button
-      btn.classList.add("active");
+    if (isInvalid) {
+        // If validation fails, add the 'red' class to the button
+        btn.classList.add("red");
+        // Reset the button color after 1 second
+        setTimeout(() => {
+            btn.classList.remove("red");
+        }, 1000);
+    } else {
+        // If validation succeeds, proceed with form submission
+        // Changing the inner HTML of the button to "Thanks"
+        btnText.innerHTML = "Thanks";
+        // Adding the "active" class to the button
+        btn.classList.add("active");
 
-      // Reset button text and color after 2 seconds
-      setTimeout(() => {
-          btnText.innerHTML = "Subscribe";
-          btn.classList.remove("active");
-      }, 3500);
-
-      // Here, you might also want to submit the form data using AJAX or any other method.
-  }
+        // Here, you might also want to submit the form data using AJAX or any other method.
+    }
 });
