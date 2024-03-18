@@ -490,6 +490,10 @@ section {
     padding: 1rem 0;
 }
 
+.fa-money-bill, .fa-handshake{
+    font-size:40px;
+    color:#27ae60
+}
 .icons-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
