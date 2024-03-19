@@ -1,25 +1,3 @@
-const fs = require('fs');
-
-// Function to save data to JSON file
-function saveFormData(formData) {
-    fs.writeFile('./database/user.json', JSON.stringify(formData), (err) => {
-        if (err) {
-            console.error('Error saving data:', err);
-            return;
-        }
-        console.log('Data saved successfully!');
-    });
-}
-
-// Sample formData object
-const formData = {
-    "email": "example@example.com",
-    "password": "examplePassword",
-    "rememberMeChecked": true
-};
-
-// Call the function to save the formData
-saveFormData(formData);
 
 searchForm = document.querySelector('.search-form');
 
