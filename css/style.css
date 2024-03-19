@@ -160,12 +160,13 @@ section {
     color: var(--black);
     cursor: pointer;
 }
-.icons > * {
+
+.icons>* {
     margin-right: 10px;
     display: inline-block;
 }
 
-#cart{
+#cart {
     margin-right: 2.5rem;
 }
 
@@ -174,11 +175,12 @@ section {
     color: var(--green);
 }
 
-.header{
+.header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #ffffff; /* Adjust as needed */
+    background-color: #ffffff;
+    /* Adjust as needed */
     z-index: 1000;
 }
 
@@ -204,6 +206,7 @@ section {
 .header .header-2 .navbar a:hover {
     background: var(--dark-color);
 }
+
 /* 
 .header .header-2.active {
     position: fixed;
@@ -427,6 +430,7 @@ section {
     display: block;
     background: none;
 }
+
 .wallet-form-container .label {
     text-align: center;
     display: block;
@@ -453,18 +457,20 @@ section {
     height: auto;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
-  }
-  
-  .page-wrapper {
+}
+
+.page-wrapper {
     min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  button {
+}
+
+button {
     padding: 20px;
     border: none;
     background: lighten(#292d48, 65);
@@ -473,17 +479,17 @@ section {
     border-radius: 5px;
     color: #292d48;
     font-size: 18px;
-  }
-  
-  .cart-item {
+}
+
+.cart-item {
     position: absolute;
     height: 24px;
     width: 24px;
     top: -10px;
     right: -10px;
-  }
-  
-  .cart-item:before {
+}
+
+.cart-item:before {
     content: '1';
     display: block;
     line-height: 24px;
@@ -495,18 +501,18 @@ section {
     color: white;
     border-radius: 20px;
     text-align: center;
-  }
-  
-  button.sendtocart .cart-item {
+}
+
+button.sendtocart .cart-item {
     display: block;
     animation: xAxis 1s forwards cubic-bezier(1.000, 0.440, 0.840, 0.165);
-  }
-  
-  button.sendtocart .cart-item:before {
+}
+
+button.sendtocart .cart-item:before {
     animation: yAxis 1s alternate forwards cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
-  
-  .cart {
+}
+
+.cart {
     position: fixed;
     top: 11px;
     right: 120px;
@@ -516,14 +522,14 @@ section {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-  }
-  
-  .cart i {
+}
+
+.cart i {
     font-size: 25px;
     color: white;
-  }
-  
-  .cart:before {
+}
+
+.cart:before {
     content: attr(data-totalitems);
     font-size: 12px;
     font-weight: 600;
@@ -538,39 +544,42 @@ section {
     color: white;
     text-align: center;
     border-radius: 24px;
-  }
-  
-  .cart.shake {
+}
+
+.cart.shake {
     animation: shakeCart 0.4s ease-in-out forwards;
-  }
-  
-  @keyframes xAxis {
+}
+
+@keyframes xAxis {
     100% {
-      transform: translateX(calc(50vw - 105px));
+        transform: translateX(calc(50vw - 105px));
     }
-  }
-  
-  @keyframes yAxis {
+}
+
+@keyframes yAxis {
     100% {
-      transform: translateY(calc(-50vh + 75px));
+        transform: translateY(calc(-50vh + 75px));
     }
-  }
-  
-  @keyframes shakeCart {
+}
+
+@keyframes shakeCart {
     25% {
-      transform: translateX(6px);
+        transform: translateX(6px);
     }
+
     50% {
-      transform: translateX(-4px);
+        transform: translateX(-4px);
     }
+
     75% {
-      transform: translateX(2px);
+        transform: translateX(2px);
     }
+
     100% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
+}
+
 
 .home {
     background: url(../image/banner-bg.jpg) no-repeat;
@@ -625,10 +634,12 @@ section {
     padding: 1rem 0;
 }
 
-.fa-money-bill, .fa-handshake{
-    font-size:40px;
-    color:#27ae60
+.fa-money-bill,
+.fa-handshake {
+    font-size: 40px;
+    color: #27ae60
 }
+
 .icons-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -793,7 +804,7 @@ section {
     background-color: red;
 }
 
-.newsletter form button{
+.newsletter form button {
     width: 270px;
     height: 80px;
     border: none;
@@ -803,33 +814,33 @@ section {
     font-size: 22px;
     border-radius: 40px;
     text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
     cursor: pointer;
 }
 
-#btnText{
+#btnText {
     font-size: 2.5rem;
 }
 
-.newsletter form .check-box{
+.newsletter form .check-box {
     width: 80px;
     height: 80px;
     border-radius: 40px;
-    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+    box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
     right: -40px;
     opacity: 0;
 }
 
-.newsletter form .check-box svg{
+.newsletter form .check-box svg {
     width: 40px;
     margin: 20px;
 }
 
-.newsletter form svg path{
+.newsletter form svg path {
     stroke-width: 5;
     stroke: #fff;
     stroke-dasharray: 34;
@@ -837,23 +848,23 @@ section {
     stroke-linecap: round;
 }
 
-.newsletter form .active{
+.newsletter form .active {
     background: var(--green);
     transition: 1s;
 }
 
-.newsletter form .active .check-box{
+.newsletter form .active .check-box {
     right: 0;
     opacity: 1;
     transition: 1s;
 }
 
-.newsletter form .active p{
+.newsletter form .active p {
     margin-right: 125px;
     transition: 1s;
 }
 
-.newsletter form .active svg path{
+.newsletter form .active svg path {
     stroke-dashoffset: 0;
     transition: 1s;
     transition-delay: 1s;
@@ -893,9 +904,9 @@ section {
     text-decoration: line-through;
 }
 
-.arrivals .arrivals-slider .box .content .stars i {
+.arrivals .arrivals-slider .box .content .volume {
     font-size: 1.5rem;
-    color: var(--green);
+    color: #27ae60;
 }
 
 .deal {

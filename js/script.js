@@ -52,6 +52,23 @@ function fadeSVG() {
   }, 600); // Change fade duration as needed
 }
 
+function addn(button) {
+  var cart = document.querySelector(".cart");
+  var carttotal = parseInt(cart.getAttribute('data-totalitems'));
+  var newcarttotal = carttotal + 1;
+
+  button.classList.add('sendtocart');
+
+  setTimeout(function() {
+    button.classList.remove('sendtocart');
+    cart.classList.add('shake');
+    cart.setAttribute('data-totalitems', newcarttotal);
+    setTimeout(function() {
+      cart.classList.remove('shake');
+    }, 500);
+  }, 1000);
+}
+
 
 window.onload = () => {
   // Check scroll position
@@ -67,7 +84,6 @@ window.onload = () => {
   // setTimeout(loaderremove, 1000);
 
   fadeSVG();
-
 
   var swiper = new Swiper(".books-slider", {
     loop: true,
