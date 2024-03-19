@@ -222,12 +222,14 @@ form.addEventListener("submit", (event) => {
             btn.classList.remove("red");
         }, 1000);
     } else {
-        // If validation succeeds, proceed with form submission
-        // Changing the inner HTML of the button to "Thanks"
-        btnText.innerHTML = "Thanks";
-        // Adding the "active" class to the button
-        btn.classList.add("active");
+        // If validation succeeds, show animation and delay form submission
+        btnText.innerHTML = "Thanks"; // Changing the inner HTML of the button to "Thanks"
+        btn.classList.add("active"); // Adding the "active" class to the button
 
-        // Here, you might also want to submit the form data using AJAX or any other method.
+        // Delaying form submission for 1.5 seconds to show the animation
+        setTimeout(() => {
+            // After the animation, you can submit the form data using AJAX or any other method.
+            form.submit();
+        }, 1500);
     }
 });
