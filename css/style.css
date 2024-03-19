@@ -893,9 +893,9 @@ section {
     text-decoration: line-through;
 }
 
-.arrivals .arrivals-slider .box .content .stars i {
+.arrivals .arrivals-slider .box .content .volume {
     font-size: 1.5rem;
-    color: var(--green);
+    color: #27ae60;
 }
 
 .deal {
