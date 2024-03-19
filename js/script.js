@@ -52,6 +52,28 @@ function fadeSVG() {
   }, 600); // Change fade duration as needed
 }
 
+function addn() {
+  var buttons = document.getElementsByClassName("add-to-cart-btn");
+  var cart = document.querySelector(".cart"); // Corrected to select the cart element properly
+  var carttotal = parseInt(cart.getAttribute('data-totalitems'));
+  var newcarttotal = carttotal + 1;
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.add('sendtocart');
+  }
+
+  setTimeout(function() {
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('sendtocart');
+    }
+    cart.classList.add('shake');
+    cart.setAttribute('data-totalitems', newcarttotal);
+    setTimeout(function() {
+      cart.classList.remove('shake');
+    }, 500);
+  }, 1000);
+}
+
 
 window.onload = () => {
   // Check scroll position
@@ -67,25 +89,6 @@ window.onload = () => {
   // setTimeout(loaderremove, 1000);
 
   fadeSVG();
-
-  // Animation for Add to Cart button
-  $('#add-to-cart-btn').on('click', function(){
-    var button = $(this);
-    var cart = $('#cart');
-    var cartTotal = cart.attr('data-totalitems');
-    var newCartTotal = parseInt(cartTotal) + 1;
-
-    button.addClass('sendtocart');
-    setTimeout(function(){
-      button.removeClass('sendtocart');
-      cart.addClass('shake').attr('data-totalitems', newCartTotal);
-      setTimeout(function(){
-        cart.removeClass('shake');
-      }, 500);
-    }, 1000);
-  });
-
-
 
   var swiper = new Swiper(".books-slider", {
     loop: true,
