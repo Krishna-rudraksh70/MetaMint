@@ -52,20 +52,15 @@ function fadeSVG() {
   }, 600); // Change fade duration as needed
 }
 
-function addn() {
-  var buttons = document.getElementsByClassName("add-to-cart-btn");
-  var cart = document.querySelector(".cart"); // Corrected to select the cart element properly
+function addn(button) {
+  var cart = document.querySelector(".cart");
   var carttotal = parseInt(cart.getAttribute('data-totalitems'));
   var newcarttotal = carttotal + 1;
 
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].classList.add('sendtocart');
-  }
+  button.classList.add('sendtocart');
 
   setTimeout(function() {
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove('sendtocart');
-    }
+    button.classList.remove('sendtocart');
     cart.classList.add('shake');
     cart.setAttribute('data-totalitems', newcarttotal);
     setTimeout(function() {
